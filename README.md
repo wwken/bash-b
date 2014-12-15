@@ -28,6 +28,7 @@ All you need to do is to source b.sh into your .bash_rc (or other file that is c
 <pre>
 mkdir -p $HOME/.bash/bash-b
 curl https://raw.githubusercontent.com/wwken/bash-b/master/b.sh > $HOME/.bash/bash-b/b.sh
+chmod 777 $HOME/.bash/bash-b/b.sh       #Optional, in case the b.sh is not executable
 echo "source $HOME/.bash/bash-b/b.sh" >> $HOME/.bash_rc
 </pre>
 
