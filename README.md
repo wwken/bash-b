@@ -15,11 +15,11 @@ b XXX -- It allows the script to go to parent directory name called 'XXX'
 <pre>
 ken@Kens-MacBook-Pro:~$ mkdir -p a/b/c/d/e/f/g
 ken@Kens-MacBook-Pro:~$ cd a/b/c/d/e/f/g
-ken@ken-machine-mbp:~/a/b/c/d/e/f/g$ <b>b 4</b> 
-ken@ken-machine-mbp:~/a/b/c$ cd d/e/f/g/
-ken@ken-machine-mbp:~/a/b/c/d/e/f/g$ <b>b c</b>
+ken@Kens-MacBook-Pro:~/a/b/c/d/e/f/g$ <b>b 4</b> 
+ken@Kens-MacBook-Pro:~/a/b/c$ cd d/e/f/g/
+ken@Kens-MacBook-Pro:~/a/b/c/d/e/f/g$ <b>b c</b>
 Going back to 'c' directory!
-ken@ken-machine-mbp:~/a/b/c$
+ken@Kens-MacBook-Pro:~/a/b/c$
 </pre>
 
 # Installation
