@@ -1,4 +1,4 @@
-# bash-b
+# bash-b (a.k.a. bash-back or bb)
 Enable the bash shell quickly go back to a specific parent directory or N levels up instead of typing cd ../../.. redundantly
 
 # Usage
