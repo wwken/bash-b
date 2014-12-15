@@ -29,5 +29,8 @@ All you need to do is to source b.sh into your .bash_rc (or other file that is c
 mkdir -p $HOME/.bash/bash-b
 curl https://raw.githubusercontent.com/wwken/bash-b/master/b.sh > $HOME/.bash/bash-b/b.sh
 echo "source $HOME/.bash/bash-b/b.sh" >> $HOME/.bash_rc
-Restart your bash shell or type source $HOME/.bash_rc
 </pre>
+
+That is. The last step of course is to restart your bash shell or type source $HOME/.bash_rc
+
+Enjoy! Yay, less and less typing for life!
