@@ -44,21 +44,35 @@ function is_this_home_directory() {
 
 b_back_to_specify_directory() {
     c_dir=`pwd`
-    #c_dir=${c_dir:0:5}
-    start_pos=`echo "$c_dir" "$1" | awk '{print index($1,$2)}' `
-    length=${#1}
-    cc_dir=${c_dir:$start_pos-1}
-    start_pos_2=`echo "$cc_dir" "/" | awk '{print index($1,$2)}' `
-    ccc_dir=${c_dir:0:$start_pos+start_pos_2-1}
-    #echo "start_pos: $start_pos, length: $length, start_pos_2: $start_pos_2, cc_dir: $cc_dir, ccc_dir: $ccc_dir"
-    echo "Going back to '$1' directory!"
-    if [[ "$length" == "($start_pos_2-1)" ]]; then
-        echo "There is no parent directory exactly named: '$1'..."
-        echo "Going back to the closest matched one directory instead: $ccc_dir"
-    elif [[ "$start_pos_2" = 0 ]]; then
-        ccc_dir=`pwd`
+    array=(${c_dir//// })
+    r_dir=''
+    is_found_exact=false
+    for i in "${!array[@]}"
+    do
+        r_dir="$r_dir/${array[i]}"
+        if [[ "$1" == "${array[i]}" ]]; then
+            is_found_exact=true
+            break
+        fi
+    done
+    if [[ "$is_found_exact" = true ]]; then
+        cd $r_dir
+    else
+        start_pos=`echo "$c_dir" "$1" | awk '{print index($1,$2)}' `
+        length=${#1}
+        cc_dir=${c_dir:$start_pos-1}
+        start_pos_2=`echo "$cc_dir" "/" | awk '{print index($1,$2)}' `
+        ccc_dir=${c_dir:0:$start_pos+start_pos_2-1}
+        #echo "start_pos: $start_pos, length: $length, start_pos_2: $start_pos_2, cc_dir: $cc_dir, ccc_dir: $ccc_dir"
+        if [[ "$length" == "($start_pos_2-1)" ]]; then
+            echo "There is no parent directory exactly named: '$1'..."
+            echo "Going back to the closest matched one directory instead: $ccc_dir"
+        elif [[ "$start_pos_2" = 0 ]]; then
+            ccc_dir=`pwd`
+        fi
+        echo "Found no directory named exactly (i.e. '$1') what you are looking for but instead going back to directory: $ccc_dir!"
+        cd $ccc_dir
     fi
-    cd $ccc_dir
 }
 
 b_back_to_N_directories() {
@@ -76,3 +90,4 @@ b_back_to_N_directories() {
         i=$[$i-1]
     done
 }
+
