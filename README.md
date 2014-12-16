@@ -20,7 +20,6 @@ ken@Kens-MacBook-Pro:~$ cd a/b/c/d/e/f/g
 ken@Kens-MacBook-Pro:~/a/b/c/d/e/f/g$ <b>b 4</b> 
 ken@Kens-MacBook-Pro:~/a/b/c$ cd d/e/f/g/
 ken@Kens-MacBook-Pro:~/a/b/c/d/e/f/g$ <b>b c</b>
-Going back to 'c' directory!
 ken@Kens-MacBook-Pro:~/a/b/c$
 </pre>
 
