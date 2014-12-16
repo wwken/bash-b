@@ -34,7 +34,7 @@ chmod 777 $HOME/.bash/bash-b/b.sh       #Optional, in case the b.sh is not execu
 echo "source $HOME/.bash/bash-b/b.sh" >> $HOME/.bash_rc
 </pre>
 
-OR, you can download the project and run the install.sh from the project root directory as follow:
+OR, alternatively (and recommended too!) you can download the project and run the install.sh from the project root directory as follow:
 
 Step 1b: run the ./install.sh
 <pre>
