@@ -23,7 +23,7 @@ Create and move into some folders, say e
   $ mkdir -p apple/banana/cherry/durian/aa/xx/aa/yy/e
   $ cd apple/banana/cherry/durian/aa/xx/aa/yy/e
 
-Move down to b
+Move down to aa
 
   $ b aa
 
