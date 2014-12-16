@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/wwken/bash-b.png)](https://travis-ci.org/wwken/bash-b)
+
 # bash-b (a.k.a. bash-back or bb)
 Enable the bash shell quickly go back to a specific parent directory or N levels up instead of typing cd ../../.. redundantly
 
