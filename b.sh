@@ -70,7 +70,7 @@ b_back_to_specify_directory() {
         elif [[ "$start_pos_2" = 0 ]]; then
             ccc_dir=`pwd`
         fi
-        echo "Found no directory named exactly (i.e. '$1') what you are looking for but instead going back to directory: $ccc_dir!"
+        #echo "Found no directory named exactly (i.e. '$1') what you are looking for but instead going back to directory: $ccc_dir!"
         cd $ccc_dir
     fi
 }
