@@ -26,7 +26,17 @@ ken@Kens-MacBook-Pro:~/a/b/c$
 # Installation
 Basically all you need to do is to source b.sh into your .bash_rc (or other file that is configured in your system, it can be .bashrc or something else). Here's the manual installation: 
 
-Step 1: run the ./install.sh
+Step 1a: create a bash-b config folder and download the script and source it as follow:
+<pre>
+mkdir -p $HOME/.bash/bash-b
+curl https://raw.githubusercontent.com/wwken/bash-b/master/b.sh > $HOME/.bash/bash-b/b.sh
+chmod 777 $HOME/.bash/bash-b/b.sh       #Optional, in case the b.sh is not executable
+echo "source $HOME/.bash/bash-b/b.sh" >> $HOME/.bash_rc
+</pre>
+
+OR, you can download the project and run the install.sh from the project root directory as follow:
+
+Step 1b: run the ./install.sh
 <pre>
 ./install.sh
 </pre>
