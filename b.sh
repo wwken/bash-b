@@ -47,7 +47,7 @@ b () {
   } >&2
 }
 
-function is_this_home_directory() {
+is_this_home_directory() {
     current_dir=`pwd`
     home_dir=`echo $HOME`
     current_dir=${current_dir////###}
@@ -109,8 +109,8 @@ b_back_to_N_directories() {
     done
 }
 
-p=0
-stacks[p]=''
+bash_b_p=0
+bash_b_stack[bash_b_p]=''
 
 bb() {
     local counter=1
@@ -121,7 +121,7 @@ bb() {
         then
             if [ "$1" == "-l" ] || [ "$1" == "-list" ];
             then
-                echo "ww"
+                print_stack
             else
                 echo "The optional argument - $@ of bb() must be an integer!"
             fi
@@ -130,15 +130,15 @@ bb() {
             counter=$1
         fi    
     fi
-    if [ "$p" -gt 0 ] && [ "$finish" = false ];
+    if [ "$bash_b_p" -gt 0 ] && [ "$finish" = false ];
     then
-        t_path=${stacks[--p]}
+        t_path=${bash_b_stack[--bash_b_p]}
         let counter--
-        if [ "$counter" -gt 0 ];
+        if [ "$bash_b_p" -gt 0 ] && [ "$counter" -gt 0 ];
         then
             bb "$counter"
         else
-            #echo "$t_path"
+            #echo "dewwwww $t_path"
             cd "$t_path"
         fi
     fi   
@@ -146,7 +146,23 @@ bb() {
 
 b_move_to_specify_directory() {
     c_dir=`pwd`
-    stacks[p++]="$c_dir"
+    bash_b_stack[bash_b_p++]="$c_dir"
     cd "$1"
+}
+
+print_stack() {
+    c_dir=`pwd`
+    i="$bash_b_p"
+    echo "---- $c_dir    <--current directory"
+    while [ "$i" -gt 0 ]; do
+        let i-=1
+        path=${bash_b_stack[i]}
+        let ii=bash_b_p-i
+        if [ "$ii" -eq 1 ]; then
+            ii="-"
+        fi
+        echo "bb $ii $path"
+    done
+    echo "ww"
 }
 

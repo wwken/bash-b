@@ -54,11 +54,6 @@ Check that it lands on /tmp/tt/uu/vv
   $ ls
   ww
 
-Perform bb -l to list all stored path stacks
-
-  $ bb -l
-  ww
-
 Execute bb 2 to go back to the previous previous path stored into the stack (i.e. /tmp/hh/ii/jj)
 
   $ bb 2
@@ -69,3 +64,12 @@ Go back one level up in /tmp/hh/ii/jj and Check that it lands on /tmp/hh/ii
   $ ls
   jj
 
+Execute bb 10 (kinda crazy but should be allowed) to go back to the root path stored into the stack (i.e. apple/banana/cherry/durian/aa/xx/aa)
+
+  $ bb 10
+
+Go back one level up in apple/banana/cherry/durian/aa/xx/aa and Check that it lands on apple/banana/cherry/durian/aa/xx
+
+  $ b
+  $ ls
+  aa
