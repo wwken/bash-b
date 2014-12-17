@@ -163,6 +163,5 @@ print_stack() {
         fi
         echo "bb $ii $path"
     done
-    echo "ww"
 }
 
