@@ -14,7 +14,8 @@ b XXX -- It allows the script to go to parent directory name called 'XXX'
 </pre>
 
 # Example
-Basic use - easily navigations on the same directory path
+
+####Basic use - easily navigations on the same directory path
 <pre>
 ken@Kens-MacBook-Pro:~$ mkdir -p a/b/c/d/e/f/g
 ken@Kens-MacBook-Pro:~$ cd a/b/c/d/e/f/g
@@ -24,7 +25,7 @@ ken@Kens-MacBook-Pro:~/a/b/c/d/e/f/g$ <b>b c</b>
 ken@Kens-MacBook-Pro:~/a/b/c$
 </pre>
 
-More advanced use - a simplified version of pushd and popd!!!
+####More advanced use - a simplified version of pushd and popd!!!
 
 1) Use case of b '/path/to/dir' and bb
 <pre>
