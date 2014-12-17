@@ -32,3 +32,40 @@ Check that it lands on jj folder
 
   $ ls
   kk
+
+Performs bb to go back to the previous path stack
+
+  $ bb
+
+Check that it lands back on apple/banana/cherry/durian/aa/xx/aa
+
+  $ ls
+  yy
+
+Create more different folders and "bove" into one of it
+  $ mkdir -p /tmp/mm/nn/oo/pp
+  $ mkdir -p /tmp/tt/uu/vv/ww
+  $ b /tmp/hh/ii/jj
+  $ b /tmp/mm/nn/oo/pp
+  $ b /tmp/tt/uu/vv
+
+Check that it lands on /tmp/tt/uu/vv
+
+  $ ls
+  ww
+
+Perform bb -l to list all stored path stacks
+
+  $ bb -l
+  ww
+
+Execute bb 2 to go back to the previous previous path stored into the stack (i.e. /tmp/hh/ii/jj)
+
+  $ bb 2
+
+Go back one level up in /tmp/hh/ii/jj and Check that it lands on /tmp/hh/ii
+
+  $ b
+  $ ls
+  jj
+

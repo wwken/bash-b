@@ -109,7 +109,44 @@ b_back_to_N_directories() {
     done
 }
 
+p=0
+stacks[p]=''
+
+bb() {
+    local counter=1
+    local finish=false
+    if [ $# -gt 0 ];
+    then
+        if [[ -n ${1//[0-9]/} ]];
+        then
+            if [ "$1" == "-l" ] || [ "$1" == "-list" ];
+            then
+                echo "ww"
+            else
+                echo "The optional argument - $@ of bb() must be an integer!"
+            fi
+            finish=true
+        else
+            counter=$1
+        fi    
+    fi
+    if [ "$p" -gt 0 ] && [ "$finish" = false ];
+    then
+        t_path=${stacks[--p]}
+        let counter--
+        if [ "$counter" -gt 0 ];
+        then
+            bb "$counter"
+        else
+            #echo "$t_path"
+            cd "$t_path"
+        fi
+    fi   
+}
+
 b_move_to_specify_directory() {
+    c_dir=`pwd`
+    stacks[p++]="$c_dir"
     cd "$1"
 }
 

@@ -17,4 +17,4 @@
 # Author: Ken Wu
 # Date: 2014 December
 
-cram --shell=bash tests
+cram $@ --shell=bash tests
