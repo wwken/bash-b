@@ -24,6 +24,9 @@ ken@Kens-MacBook-Pro:~/a/b/c$
 </pre>
 
 # Installation
+
+###- For first time fresh install
+
 Basically all you need to do is to source b.sh into your .bash_rc (or other file that is configured in your system, it can be .bashrc or something else). Here's the manual installation: 
 
 Step 1a: create a bash-b config folder and download the script and source it as follow:
@@ -39,6 +42,18 @@ OR, alternatively (and recommended too!) you can download the project and run th
 Step 1b: run the ./install.sh
 <pre>
 ./install.sh
+</pre>
+
+Step 2: source the updated .bash_rc 
+<pre>
+source "$HOME/.bash_rc"
+</pre>
+
+###- For update/re-install
+
+Step 1: re-download the script and source it as follow:
+<pre>
+curl https://raw.githubusercontent.com/wwken/bash-b/master/b.sh > $HOME/.bash/bash-b/b.sh
 </pre>
 
 Step 2: source the updated .bash_rc 
