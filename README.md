@@ -14,6 +14,7 @@ b XXX -- It allows the script to go to parent directory name called 'XXX'
 </pre>
 
 # Example
+Basic use - easily navigations on the same directory path
 <pre>
 ken@Kens-MacBook-Pro:~$ mkdir -p a/b/c/d/e/f/g
 ken@Kens-MacBook-Pro:~$ cd a/b/c/d/e/f/g
@@ -21,6 +22,39 @@ ken@Kens-MacBook-Pro:~/a/b/c/d/e/f/g$ <b>b 4</b>
 ken@Kens-MacBook-Pro:~/a/b/c$ cd d/e/f/g/
 ken@Kens-MacBook-Pro:~/a/b/c/d/e/f/g$ <b>b c</b>
 ken@Kens-MacBook-Pro:~/a/b/c$
+</pre>
+
+More advanced use - a simplified version of pushd and popd!!!
+
+1) Use case of b '/path/to/dir' and bb
+<pre>
+ken@Kens-MacBook-Pro:~$ cd a/b/c/d/e/f/g
+ken@Kens-MacBook-Pro:~/a/b/c/d/e/f/g$ pwd
+/Users/ken/a/b/c/d/e/f/g
+ken@Kens-MacBook-Pro:~/a/b/c/d/e/f/g$ mkdir -p /tmp/mm/nn/oo/pp/
+ken@Kens-MacBook-Pro:~/a/b/c/d/e/f/g$ <b>b /tmp/mm/nn/oo/pp/</b>
+ken@Kens-MacBook-Pro:/tmp/mm/nn/oo/pp$ pwd
+/tmp/mm/nn/oo/pp/
+	...Do other works
+ken@Kens-MacBook-Pro:/tmp/mm/nn/oo/pp$ <b>bb</b>
+ken@Kens-MacBook-Pro:~/a/b/c/d/e/f/g$ pwd
+/Users/ken/a/b/c/d/e/f/g
+</pre>
+
+2) Use case of bb n, where n is a number indicating the levels of nth previous stored path
+<pre>
+ken@Kens-MacBook-Pro:~$ mkdir -p /tmp/tt/uu/vv/ww/
+ken@Kens-MacBook-Pro:~$ mkdir -p /tmp/xx/yy/zz
+ken@Kens-MacBook-Pro:~$ cd a/b/c/d/e/f/g
+ken@Kens-MacBook-Pro:~/a/b/c/d/e/f/g$ <b>b /tmp/mm/nn/oo/pp/</b>
+...Do other works
+ken@Kens-MacBook-Pro:/tmp/mm/nn/oo/pp$ <b>b /tmp/tt/uu/vv/ww/</b>
+...Do other works
+ken@Kens-MacBook-Pro:/tmp/tt/uu/vv/ww$ <b>b /tmp/xx/yy/zz</b>
+...Do other works
+ken@Kens-MacBook-Pro:/tmp/xx/yy/zz$ <b>bb 3</b>
+ken@Kens-MacBook-Pro:~/a/b/c/d/e/f/g$ pwd
+/Users/ken/a/b/c/d/e/f/g
 </pre>
 
 # Installation
