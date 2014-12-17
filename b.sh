@@ -32,11 +32,15 @@ b () {
     return 0
   } >&2
   (($#==1)) && {
-    if [[ -n ${1//[0-9]/} ]];   #if the argument contains a non-digit
+    if [[ -n ${1//[0-9]/} ]];
     then
-        b_back_to_specify_directory $1
-    else                        #Otherwise, the argument is just a number
-        #echo "Going back to $1 directories"
+        if [[ -z "${1##*\/*}" ]];
+        then
+            b_move_to_specify_directory $1
+        else
+            b_back_to_specify_directory $1
+        fi
+    else                        
         b_back_to_N_directories $1
     fi
     return 0
@@ -85,7 +89,6 @@ b_back_to_specify_directory() {
         elif [[ "$start_pos_2" = 0 ]]; then
             ccc_dir=`pwd`
         fi
-        #echo "Found no directory named exactly (i.e. '$1') what you are looking for but instead going back to directory: $ccc_dir!"
         cd $ccc_dir
     fi
 }
@@ -104,5 +107,9 @@ b_back_to_N_directories() {
         b
         i=$[$i-1]
     done
+}
+
+b_move_to_specify_directory() {
+    cd "$1"
 }
 
