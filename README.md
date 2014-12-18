@@ -59,23 +59,22 @@ ken@Kens-MacBook-Pro:~/a/b/c/d/e/f/g$ pwd
 </pre>
 
 3) We can use <b>bb -l</b> (or <b>bb -list</b>/) to list all the paths that are stored into the stack.  (more like peeking all the elements from the pushd, conceptually)
-
 <pre>
 ken@Kens-MacBook-Pro:~$ mkdir -p /tmp/a/b/c/d
 ken@Kens-MacBook-Pro:~$ mkdir -p /tmp/h/j/k/l
 ken@Kens-MacBook-Pro:~$ mkdir -p /tmp/m/n/
 ken@Kens-MacBook-Pro:~$ mkdir -p /tmp/p/q/r/s/t
-ken@Kens-MacBook-Pro:~$ b /tmp/a/b/c/d/
-ken@Kens-MacBook-Pro:/tmp/a/b/c/d$ b /tmp/h/j/k/l/
-ken@Kens-MacBook-Pro:/tmp/h/j/k/l$ b /tmp/m/n/
-ken@Kens-MacBook-Pro:/tmp/m/n$ b /tmp/p/q/r/s/t/
-ken@Kens-MacBook-Pro:/tmp/p/q/r/s/t$ bb -l
----- /tmp/p/q/r/s/t    <--current directory
+ken@Kens-MacBook-Pro:~$ <b>b /tmp/a/b/c/d/</b>
+ken@Kens-MacBook-Pro:/tmp/a/b/c/d$ <b>b /tmp/h/j/k/l/</b>
+ken@Kens-MacBook-Pro:/tmp/h/j/k/l$ <b>b /tmp/m/n/</b>
+ken@Kens-MacBook-Pro:/tmp/m/n$ <b>b /tmp/p/q/r/s/t/</b>
+ken@Kens-MacBook-Pro:/tmp/p/q/r/s/t$ <b>bb -l</b>
+---- /tmp/p/q/r/s/t   ---current directory
 bb - /tmp/m/n
 bb 2 /tmp/h/j/k/l
 bb 3 /tmp/a/b/c/d
 bb 4 /Users/ken
-ken@Kens-MacBook-Pro:/tmp/p/q/r/s/t$ bb 3
+ken@Kens-MacBook-Pro:/tmp/p/q/r/s/t$ <b>bb 3</b>
 ken@Kens-MacBook-Pro:/tmp/a/b/c/d$ pwd
 /tmp/a/b/c/d
 </pre>
